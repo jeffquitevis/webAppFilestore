@@ -34,20 +34,13 @@ public class ListAllServlet extends HttpServlet {
 
         List<PersonModel> personModelList = null;
         ObjectMapper objectMapper = new ObjectMapper();
+
         try {
             personModelList = personStore.getAllRecords();
-        } catch (IllegalBlockSizeException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+
+        } catch (NoSuchPaddingException  |NoSuchAlgorithmException |IllegalBlockSizeException | BadPaddingException | InvalidKeyException |ClassNotFoundException ex) {
+
+            throw new ServletException();
         }
 
         resp.setStatus(HttpServletResponse.SC_OK);

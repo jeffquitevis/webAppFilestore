@@ -37,18 +37,8 @@ public class AddPersonServlet extends HttpServlet {
 
             personStore.addUser(new PersonModel(false,Integer.valueOf(id),name,last));
 
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (IllegalBlockSizeException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } catch (NoSuchPaddingException  |NoSuchAlgorithmException |IllegalBlockSizeException | BadPaddingException | InvalidKeyException |ClassNotFoundException ex) {
+
         }
     }
 }

@@ -16,6 +16,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 public class App {
 
     public static void main (String[] args) throws Exception {
+
         Server server = new Server(7070);
 
         PersonDataStoreFile psdf = new PersonDataStoreFile(new RSAKey());
